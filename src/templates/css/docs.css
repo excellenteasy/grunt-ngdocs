@@ -3,18 +3,6 @@ img.AngularJS-small {
   height: 25px;
 }
 
-/* this is here to avoid the display=block shuffling of ngShow */
-.breadcrumb li > * {
-  float:left;
-  margin:0 2px 0 0;
-}
-
-.breadcrumb {
-  padding-top: 6px;
-  padding-bottom: 0;
-  line-height: 18px
-}
-
 .header img {
   max-height: 40px;
   padding-right: 20px;
@@ -40,19 +28,14 @@ img.AngularJS-small {
 }
 
 
-.icon-cog {
+.fa-cog {
   line-height: 13px;
 }
 
 /* =============================== */
 
-.form-search {
-  margin-right: 10px;
-}
-
-.form-search .search-query {
-  width: 180px;
-  width: 200px \9;
+.form-search .form-group {
+  margin-bottom: 0;
 }
 
 .form-search .dropdown-menu {
@@ -71,12 +54,29 @@ img.AngularJS-small {
 }
 
 .form-search > ul.nav > li.module {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   background-color: #d3d3d3;
 }
 
+.form-search > ul.nav > li.module > .code {
+  display: inline-block;
+}
+
+.form-search > ul.nav > li.module > .guide {
+  display: inline-block;
+  float: right;
+}
+
 .form-search > ul.nav > li.section {
+  margin-top: 0;
   background-color: #ebebeb;
-  min-height: 14px;
+}
+
+.form-search > ul.nav > li.section > .guide {
+  width: 100%;
+  text-align: right;
+  padding: 5px 15px;
 }
 
 .form-search > ul.nav > li.first {
@@ -92,42 +92,31 @@ img.AngularJS-small {
   padding-bottom: 6px;
 }
 
-.form-search .well {
+.form-search .nav-pills {
   border-color: #d3d3d3;
   padding: 0;
   margin-bottom: 15px;
 }
 
-.form-search .well .nav-header {
+.form-search .nav-pills .nav-header {
   text-transform: none;
-  padding: 3px 1px;
-  margin: 0;
 }
 
-.form-search .well .nav-header a {
+.form-search .nav-pills .nav-header a {
   text-transform: none;
   color: black;
 }
-.form-search .well .nav-header a:hover {
+.form-search .nav-pills .nav-header a:hover {
   background-color: inherit;
 }
 
-.form-search .well li {
+.form-search .nav-pills li {
+  overflow: hidden;
   line-height: 14px;
 }
 
-.form-search .well li a:focus {
+.form-search .nav-pills li a:focus {
 	outline: none;
-}
-
-.form-search .well .guide {
-  float: right;
-  padding-top: 0;
-  color: gray;
-}
-
-.form-search .module .guide {
-  line-height: 20px;
 }
 
 .match > a, .nav > .match > a:hover {
@@ -298,4 +287,8 @@ ul.events > li > h3 {
 
 .type-hint-number {
   background:rgb(189, 63, 66);
+}
+
+ol.linenums {
+  margin: 0;
 }
