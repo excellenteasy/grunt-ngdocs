@@ -9,6 +9,7 @@
   <meta name="Description"
         content="Documentation for Bradypodion, the next generation mobile web app framework">
   <meta name="fragment" content="!">
+  <meta name="viewport" content="width=device-width">
   <title ng-bind-template="<%= title || 'Doc' %>: {{partialTitle}}">Docs</title>
   <script type="text/javascript">
     // dynamically add base tag as well as css and javascript files.
@@ -84,7 +85,7 @@
 
 <body>
   <header class="header">
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top" ng-init="isCollapsed = true">
       <div class="container">
         <div class="navbar-header">
           <% if (image) { %>
@@ -99,8 +100,12 @@
           <% if (title) {%>
             <a <% if (titleLink) { %> href="<%= titleLink %>" <% } %> class="navbar-brand"><%= title %></a>
           <% } %>
+          <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="fa fa-bars"></span>
+          </button>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse bs-js-navbar-collapse" ng-class="{in: !isCollapsed}">
           <ul class="nav navbar-nav navbar-left">
             <li ng-repeat="(url, name) in sections" ng-class="{active: isActivePath(url)}">
               <a ng-href="{{url}}"><span class="fa fa-book"></span> {{name}}</a>
